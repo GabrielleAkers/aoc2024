@@ -189,7 +189,6 @@ const calc_score = (state) => {
             render(ctx, state);
         }
         else {
-            started = false;
             const score = calc_score(state);
             footer.innerHTML = `BIG SCORE! ${score}`;
             console.log("score is ", score);

@@ -3,7 +3,7 @@ export const BOX = "O";
 export const BLANK = ".";
 export const PLAYER = "@";
 export const parse_map = async () => {
-    const data = await (await fetch("../data/map")).text();
+    const data = await (await fetch(new URL("data/map", window.location.href).href)).text();
     const map_data = {
         width: 0,
         map: [],
@@ -38,7 +38,7 @@ export const DOWN = "v";
 export const LEFT = "<";
 export const RIGHT = ">";
 export const parse_moves = async () => {
-    const data = await (await fetch("../data/moves")).text();
+    const data = await (await fetch(new URL("data/moves", window.location.href).href)).text();
     const lines = data.split(/\r?\n/);
     return lines.join("");
 };

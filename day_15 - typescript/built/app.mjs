@@ -221,7 +221,8 @@ const calc_score = (state) => {
     load_moves_btn.onclick = async (evt) => {
         evt.preventDefault();
         const move_string = await parse_moves();
-        moves_textfield.value = move_string;
+        moves = move_string.split("").filter(val => (val === UP || val === DOWN || val === LEFT || val === RIGHT));
+        moves_textfield.value = moves.join("");
     };
     document.body.insertAdjacentElement("beforeend", load_moves_btn);
 })();
